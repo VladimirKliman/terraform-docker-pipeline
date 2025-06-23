@@ -2,7 +2,7 @@ import os
 import time
 from kafka import KafkaProducer
 
-bootstrap_servers = os.getenv('BOOTSTRAP_SERVERS', 'localhost:9092')
+bootstrap_servers = os.getenv('BOOTSTRAP_SERVERS', 'kafka:9092')
 
 producer = KafkaProducer(bootstrap_servers=bootstrap_servers)
 
