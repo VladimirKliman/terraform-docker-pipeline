@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     docker = {
-      source = "kreuzwerker/docker"
+      source  = "kreuzwerker/docker"
       version = "~> 3.0.2"
     }
   }
@@ -18,10 +18,10 @@ resource "docker_network" "app_net" {
 
 # Generator image
 resource "docker_image" "generator" {
-  name         = "generator:latest"
+  name = "generator:latest"
   build {
-    context    = "${path.module}/../generator"
-    dockerfile = "Dockerfile"
+    context    = "${path.module}/generator"
+    dockerfile = "${path.module}/generator/Dockerfile"
   }
 }
 
@@ -40,10 +40,10 @@ resource "docker_container" "generator" {
 
 # Consumer image
 resource "docker_image" "consumer" {
-  name         = "consumer:latest"
+  name = "consumer:latest"
   build {
-    context    = "${path.module}/../consumer"
-    dockerfile = "Dockerfile"
+    context    = "${path.module}/consumer"
+    dockerfile = "${path.module}/consumer/Dockerfile"
   }
 }
 
