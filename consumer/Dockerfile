@@ -1,5 +1,5 @@
 FROM python:3.9-slim
 WORKDIR /app
-COPY app.py .
+COPY consumer_app.py .
 RUN pip install requests
 CMD ["python", "app.py"]
