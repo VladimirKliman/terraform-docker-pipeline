@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  generator_app:
+    build:
+      context: ./generator
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_ENV=development
+
+  consumer_app:
+    build:
+      context: ./consumer
+    ports:
+      - "5001:5000"
