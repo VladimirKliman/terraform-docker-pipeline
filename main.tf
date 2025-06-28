@@ -20,8 +20,8 @@ resource "docker_network" "app_net" {
 resource "docker_image" "generator" {
   name = "generator:latest"
   build {
-    context    = "./generator"
-    dockerfile = "./generator/Dockerfile"
+    context    = "${path.module}/generator"
+    dockerfile = "${path.module}/generator/Dockerfile"
   }
 }
 
@@ -42,8 +42,8 @@ resource "docker_container" "generator" {
 resource "docker_image" "consumer" {
   name = "consumer:latest"
   build {
-    context    = "./consumer"
-    dockerfile = "./consumer/Dockerfile"
+    context    = "${path.module}/consumer"
+    dockerfile = "${path.module}/consumer/Dockerfile"
   }
 }
 
