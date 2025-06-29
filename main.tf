@@ -21,7 +21,7 @@ resource "docker_image" "generator" {
   name = "generator:latest"
   build {
     context    = "${path.module}/generator"
-    dockerfile = "${path.module}/generator/Dockerfile"
+    #dockerfile = "${path.module}/generator/Dockerfile"
   }
 }
 
@@ -43,7 +43,7 @@ resource "docker_image" "consumer" {
   name = "consumer:latest"
   build {
     context    = "${path.module}/consumer"
-    dockerfile = "${path.module}/consumer/Dockerfile"
+    #dockerfile = "${path.module}/consumer/Dockerfile"
   }
 }
 
