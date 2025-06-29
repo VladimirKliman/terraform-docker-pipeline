@@ -56,3 +56,11 @@ resource "docker_container" "consumer" {
   }
   depends_on = [docker_container.generator]
 }
+
+output "generator_dockerfile_path" {
+  value = abspath("${path.module}/generator/Dockerfile")
+}
+
+output "current_module_path" {
+  value = abspath(path.module)
+}
