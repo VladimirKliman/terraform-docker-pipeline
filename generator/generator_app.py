@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route("/data")
 def data():
     return jsonify({
-        "timestamp": datetime.datetime.utcnow().isoformat(),
+        "timestamp": datetime.datetime.now(datetime.timezone.utc).isoformat(),
         "value": random.randint(0, 100)
     })
 
